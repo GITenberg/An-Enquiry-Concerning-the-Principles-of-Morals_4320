@@ -1,0 +1,42 @@
+_repo: An-Enquiry-Concerning-the-Principles-of-Morals_4320
+_version: 0.0.1
+creator:
+  author:
+    agent_name: Hume, David
+    birthdate: 1711
+    deathdate: 1776
+    gutenberg_agent_id: '1440'
+    url: http://www.gutenberg.org/2009/agents/1440
+    wikipedia: http://en.wikipedia.org/wiki/David_Hume
+description: "An Enquiry Concerning the Principles of Morals (EPM) is a book by Scottish\
+  \ enlightenment philosopher David Hume. In it, Hume argues (among other things)\
+  \ that the foundations of morals lie with sentiment, not reason.\nAn Enquiry Concerning\
+  \ the Principles of Morals is the enquiry subsequent to the Enquiry Concerning Human\
+  \ Understanding (EHU). Thus, it is often referred to as \"the second Enquiry\".\
+  \ It was originally published in 1751, three years after the first Enquiry. Hume\
+  \ first discusses ethics in A Treatise of Human Nature (in Book 3 - \"Of Morals\"\
+  ). He later extracted and expounded upon the ideas he proposed there in his second\
+  \ Enquiry. In his short autobiographical work, My Own Life (1776), Hume states that\
+  \ his second Enquiry is \"of all my writings, historical, philosophical, or literary,\
+  \ incomparably the best.\"\n From Wikipedia (CC BY-SA)."
+gutenberg_bookshelf: Philosophy
+gutenberg_issued: '2003-08-01'
+gutenberg_type: Text
+identifiers:
+  gutenberg: '4320'
+  wikidata: Q1306663
+language: en
+publisher: Project Gutenberg
+rights: Public domain in the USA.
+rights_url: http://creativecommons.org/about/pdm
+subjects:
+- !lcc 'BJ'
+- !lcsh 'Conduct of life'
+- !lcsh 'Ethics'
+- GITenberg
+title: An Enquiry Concerning the Principles of Morals
+url: http://www.gutenberg.org/ebooks/4320
+wikipedia:
+- https://is.wikipedia.org/wiki/Ranns%C3%B3kn_%C3%A1_si%C3%B0g%C3%A6%C3%B0isl%C3%B6gm%C3%A1lum
+- https://de.wikipedia.org/wiki/Eine_Untersuchung_%C3%BCber_die_Prinzipien_der_Moral
+- https://en.wikipedia.org/wiki/An_Enquiry_Concerning_the_Principles_of_Morals

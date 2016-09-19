@@ -1,0 +1,61 @@
+sudo: required
+dist: trusty
+language: ruby
+
+before_install:
+before_install:
+- gem install asciidoctor -v 1.5.2
+- gem install tilt
+- sudo pip install git+https://github.com/gitenberg-dev/gitberg
+- sudo pip install pillow
+- sudo pip install cssutils
+- sudo pip install docutils
+- sudo pip install roman
+- sudo pip install git+https://github.com/gitenberg-dev/pg-epubmaker
+script:
+- VERSION=`ruby -e "require 'yaml'; meta = YAML.load_file('metadata.yaml'); puts meta['_version'];"`
+- git clone https://github.com/gitenberg-dev/asciidoctor-htmlbook.git
+- sudo pip install -r asciidoctor-htmlbook/gitberg-machine/requirements.txt
+
+- /usr/bin/python -c "from gitenberg import travis; travis.build_epub()"
+- ebook-convert book.epub book.mobi
+- xvfb-run ebook-convert book.epub book.pdf
+branches:
+  only:
+  - master
+notifications:
+  webhooks:
+    urls:
+      - https://unglue.it/api/travisci/webhook
+    on_success: always
+    on_failure: never
+    on_start: never
+deploy:
+  skip_cleanup: true
+  provider: releases
+  api_key:
+    secure: B7x4Xg0XcCyg/rG/WKIop/2yQVRCY49pQ2I1ZpFFw8UZnY4+47lZkRmn9xrP1m/Cc//XlBXuYNzXEhuHgXPEC6vsu1riw2UlCKTxSZ6sXSUnKCqFNBGwm1lKZE/vSrcNfQ7vV5XeSrBW0JxeOHf6QuOmf1QjFjssxvKawuleuwmVuFl+Uz9QROjYKIYiglk6Ihp79jqkCl/z5DZZthoz3IwdDwXyxTBREhHA8PXDanhCn+hgHrfZtVHSVJmWS9b5pqr12F62qlL2NoEidGKoZll17cSmT34Qc+XPlv8tJb5Y8kMduMdB3HlWYNWS24/thmoDvqsHHzp64tudBpig6b9fPlma5FKWByXMEzcbapY5suAulsR5mIBeQWEs+DSN+nF7tnEPf9n/LvOt9HV3Y7UAlgUV4uvZ2/0fktmgDCNqod7yoZX0yQhInjRf6woi9p40yi4UQUlMCkE3bQOsNx/1CI6s/uRRKIrt967K2N5CpD6eeErPKlWwJkXvFhwvODz0rBxyWtDaEflTUlrgv4qdV/xofCRA/bsCQe5lmLtjYhnIafY6T21RjxpnnUEqO5aWyvL1x0WuoBrHdKJKgJ5gHq2xAnhswytI4GDmnaPkUNS2s3rz49d8mMaVjuT42o8lxKv6/+ssJ5co///W+C2SqFmAOAS07OJxfioC1y8=
+  file:
+    - book.epub
+    - book.mobi
+    - book.pdf
+  "on":
+    repo: GITenberg/An-Enquiry-Concerning-the-Principles-of-Morals_4320
+addons:
+  apt:
+    packages:
+    - xsltproc
+    - xvfb
+    - calibre
+    - python-pip
+    - git
+    - python-dev
+    - libjpeg-dev
+    - libpng-dev
+    - libfreetype6
+    - libfreetype6-dev
+    - zlib1g-dev
+    - python-lxml
+    - libxml2-dev
+    - libxslt1-dev
+    - tidy

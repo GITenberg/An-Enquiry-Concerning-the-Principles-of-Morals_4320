@@ -1,5 +1,8 @@
 _repo: An-Enquiry-Concerning-the-Principles-of-Morals_4320
-_version: 0.1.0
+_version: 0.2.0
+covers:
+- cover_type: generated
+  image_path: cover.png
 creator:
   author:
     agent_name: Hume, David
@@ -19,6 +22,8 @@ description: "An Enquiry Concerning the Principles of Morals (EPM) is a book by 
   \ Enquiry. In his short autobiographical work, My Own Life (1776), Hume states that\
   \ his second Enquiry is \"of all my writings, historical, philosophical, or literary,\
   \ incomparably the best.\"\n From Wikipedia (CC BY-SA)."
+edition_identifiers:
+  edition_id: http://www.gutenberg.org/ebooks/4320#An-Enquiry-Concerning-the-Principles-of-Morals
 gutenberg_bookshelf: Philosophy
 gutenberg_issued: '2003-08-01'
 gutenberg_type: Text
